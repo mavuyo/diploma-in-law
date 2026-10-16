@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An independent Diploma in Law learning platform with study modules, case law, legislation, flashcards and practice quizzes.">
+  <title>Diploma in Law Learning Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Diploma in Law Learning Hub home">
+      <span class="brand-mark">§</span>
+      <span><strong>Diploma in Law</strong><small>LEARNING HUB</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#modules">Modules</a>
+      <a href="#library">Law Library</a>
+      <a href="#practice">Practice</a>
+      <a href="#planner">Study Planner</a>
+      <button class="nav-login" id="openLogin">Sign in</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">YOUR LAW STUDY COMPANION</span>
+        <h1>Build your legal knowledge.<br><em>Prepare with confidence.</em></h1>
+        <p>Study South African law in simple English, explore legal concepts, revise cases and legislation, and practise with learning activities in one place.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#modules">Explore modules <span>→</span></a>
+          <a class="button button-outline" href="#practice">Start practising</a>
+        </div>
+        <p class="small-note">Independent educational resource. Not an official UNISA website.</p>
+      </div>
+      <div class="hero-art" aria-label="Decorative legal study illustration">
+        <div class="art-circle"></div>
+        <div class="art-card art-card-main">
+          <span class="art-symbol">§</span>
+          <h3>Knowledge is<br>your strongest case.</h3>
+          <p>LEARN · REVISE · PRACTISE</p>
+        </div>
+        <div class="art-card art-card-small"><span>✓</span><div><strong>One step at a time</strong><small>Track your learning</small></div></div>
+        <div class="art-pill">South African Law</div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><strong>30</strong><span>Editable module spaces</span></div>
+      <div><strong>01</strong><span>Searchable law library</span></div>
+      <div><strong>∞</strong><span>Opportunities to revise</span></div>
+    </section>
+
+    <section class="section" id="dashboard">
+      <div class="section-heading">
+        <div><span class="eyebrow">YOUR STUDY SPACE</span><h2>Keep your progress moving</h2></div>
+        <button class="text-button" id="resetProgress">Reset demo progress ↻</button>
+      </div>
+      <div class="dashboard-grid">
+        <article class="panel progress-panel">
+          <div class="panel-title"><div><span class="icon-box">▥</span><h3>Study overview</h3></div><span class="status-chip">On your way</span></div>
+          <div class="progress-number"><strong id="completedCount">0</strong><span>/ 30 modules started</span></div>
+          <div class="progress-track"><span id="overallProgress"></span></div>
+          <p class="muted">Mark modules as started to see your learning progress here. Progress is saved in this browser on this demo.</p>
+          <a class="text-button" href="#modules">Continue studying →</a>
+        </article>
+        <article class="panel quick-panel">
+          <span class="icon-box gold">✦</span><h3>Quick revision</h3><p>Test your understanding with short practice questions and legal flashcards.</p>
+          <a class="button button-dark" href="#practice">Open practice tools</a>
+        </article>
+        <article class="panel unisa-panel">
+          <span class="external-icon">↗</span><span class="eyebrow">EXTERNAL RESOURCE</span><h3>UNISA exam practice</h3><p>Continue to the UNISA examination practice platform in a new tab.</p>
+          <a class="button button-light" href="https://adovh.unisa.ac.za/my/courses.php" target="_blank" rel="noopener noreferrer">Open UNISA practice ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="modules">
+      <div class="section-heading">
+        <div><span class="eyebrow">LEARNING PATH</span><h2>Explore your law modules</h2><p class="section-subtitle">Choose a module to view its learning outline and mark it as started.</p></div>
+        <div class="module-controls"><input id="moduleSearch" type="search" placeholder="Search modules..." aria-label="Search modules"><select id="categoryFilter" aria-label="Filter modules"><option value="all">All categories</option></select></div>
+      </div>
+      <div class="module-grid" id="moduleGrid"></div>
+      <p class="disclaimer-inline">Module names below are illustrative placeholders, not a verified official UNISA curriculum. Replace them with your confirmed module names and codes before publishing.</p>
+    </section>
+
+    <section class="section" id="library">
+      <div class="section-heading">
+        <div><span class="eyebrow">RESEARCH & REVISION</span><h2>Your law library</h2><p class="section-subtitle">Explore legal terms, reference legislation, and review case summaries.</p></div>
+        <input id="librarySearch" class="library-search" type="search" placeholder="Search cases, Acts or terms..." aria-label="Search law library">
+      </div>
+      <div class="library-tabs" role="tablist" aria-label="Law library categories">
+        <button class="tab-button active" data-tab="cases" role="tab" aria-selected="true">Case law</button>
+        <button class="tab-button" data-tab="legislation" role="tab" aria-selected="false">Legislation</button>
+        <button class="tab-button" data-tab="dictionary" role="tab" aria-selected="false">Legal dictionary</button>
+      </div>
+      <div class="library-grid" id="libraryGrid"></div>
+      <p class="disclaimer-inline">Learning summaries are for revision only. Verify case citations, current legislation and legal principles against authoritative sources before relying on them.</p>
+    </section>
+
+    <section class="section practice-section" id="practice">
+      <div class="section-heading">
+        <div><span class="eyebrow">CHECK YOUR UNDERSTANDING</span><h2>Practice makes progress</h2><p class="section-subtitle">Try a quick quiz or revise key legal concepts with flashcards.</p></div>
+      </div>
+      <div class="practice-grid">
+        <article class="panel quiz-panel">
+          <div class="panel-title"><div><span class="icon-box">?</span><h3>Quick law quiz</h3></div><span class="status-chip">5 questions</span></div>
+          <div id="quizArea">
+            <p>Answer five introductory questions about South African law. You will see your score and explanations when you finish.</p>
+            <button class="button button-primary" id="startQuiz">Start quiz →</button>
+          </div>
+        </article>
+        <article class="panel flashcard-panel">
+          <div class="panel-title"><div><span class="icon-box gold">▤</span><h3>Legal flashcards</h3></div><span class="status-chip" id="flashcardCount">Card 1 of 5</span></div>
+          <div class="flashcard" id="flashcard" tabindex="0" role="button" aria-label="Flashcard. Activate to reveal the answer">
+            <span class="eyebrow">TAP TO REVEAL</span><h3 id="flashQuestion">What is the Constitution?</h3><p id="flashAnswer" hidden>The supreme law of South Africa.</p>
+          </div>
+          <div class="flash-controls"><button class="button button-outline" id="flipCard">Reveal answer</button><button class="button button-dark" id="nextCard">Next card →</button></div>
+        </article>
+      </div>
+      <div class="unisa-banner">
+        <div><span class="eyebrow">READY FOR THE NEXT STEP?</span><h3>Visit the UNISA exam practice platform</h3><p>This link opens an external website. You may need to sign in to your UNISA account there.</p></div>
+        <a class="button button-light" href="https://adovh.unisa.ac.za/my/courses.php" target="_blank" rel="noopener noreferrer">Go to UNISA practice ↗</a>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="planner">
+      <div class="section-heading">
+        <div><span class="eyebrow">STAY ORGANISED</span><h2>Your study planner</h2><p class="section-subtitle">Add revision tasks and tick them off as you complete them.</p></div>
+      </div>
+      <div class="planner-layout">
+        <form class="panel task-form" id="taskForm">
+          <h3>Add a study task</h3>
+          <label for="taskTitle">Task</label><input id="taskTitle" required maxlength="120" placeholder="e.g. Revise contract law">
+          <label for="taskDate">Target date</label><input id="taskDate" type="date">
+          <button class="button button-primary" type="submit">Add task +</button>
+        </form>
+        <div class="panel tasks-panel"><div class="panel-title"><h3>My revision checklist</h3><span class="status-chip" id="taskCount">0 tasks</span></div><ul id="taskList" class="task-list"></ul><p id="emptyTasks" class="muted">No tasks yet. Add a task to start planning.</p></div>
+      </div>
+    </section>
+
+    <section class="section account-section" id="account">
+      <div class="account-copy"><span class="eyebrow">PERSONALISE YOUR EXPERIENCE</span><h2>Save your learning journey</h2><p>This front-end demo stores progress and tasks locally in your current browser. To support secure student accounts across devices, connect a real authentication service and database before launch.</p></div>
+      <div class="account-actions"><button class="button button-light" id="openRegister">Create account (demo)</button><button class="button button-outline light-outline" id="openLoginBottom">Sign in (demo)</button></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark">§</span><span><strong>Diploma in Law</strong><small>LEARNING HUB</small></span></a>
+      <p>An independent educational resource to support your law studies.</p>
+      <div class="footer-links"><a href="#privacy">Privacy Policy</a><a href="#terms">Terms of Use</a><a href="#contact">Contact</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Diploma in Law Learning Hub</span><span>Independent platform · Not affiliated with UNISA</span></div>
+  </footer>
+
+  <dialog id="moduleDialog" class="modal">
+    <form method="dialog"><button class="modal-close" aria-label="Close dialog">×</button></form>
+    <span class="eyebrow" id="modalCategory">MODULE OVERVIEW</span><h2 id="modalTitle">Module title</h2><p id="modalDescription"></p>
+    <div class="modal-columns"><div><h3>What to study</h3><ul id="modalTopics"></ul></div><div><h3>Study checklist</h3><p>Use this page to plan your revision. Confirm all legal information with your course materials and authoritative sources.</p><label class="check-row"><input type="checkbox" id="moduleStarted"> Mark module as started</label></div></div>
+    <button class="button button-primary" id="modalDone">Save progress</button>
+  </dialog>
+
+  <dialog id="authDialog" class="modal auth-modal">
+    <form method="dialog"><button class="modal-close" aria-label="Close dialog">×</button></form>
+    <span class="eyebrow">STUDENT SPACE DEMO</span><h2 id="authTitle">Create your account</h2>
+    <p>This is a front-end demonstration only. It does not create a secure account or send data to a server.</p>
+    <form id="authForm" class="auth-form"><label for="authName">Name</label><input id="authName" autocomplete="name" placeholder="Your name"><label for="authEmail">Email</label><input id="authEmail" type="email" autocomplete="email" required placeholder="you@example.com"><label for="authPassword">Password</label><input id="authPassword" type="password" autocomplete="new-password" minlength="8" required placeholder="At least 8 characters"><label class="check-row"><input type="checkbox" id="privacyAgree" required> I have read the Privacy Policy and Terms of Use.</label><button class="button button-primary" type="submit">Continue demo</button></form>
+    <p class="muted" id="authMessage" aria-live="polite"></p>
+  </dialog>
+
+  <dialog id="infoDialog" class="modal info-modal">
+    <form method="dialog"><button class="modal-close" aria-label="Close dialog">×</button></form>
+    <div id="infoContent"></div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
